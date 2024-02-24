@@ -1,0 +1,114 @@
+* {
+    user-select: none;
+}
+
+#dlg-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: stretch;
+  background: #e6e6e6;
+  padding: 3px;
+  gap:5px;
+}
+#binds-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 3px;
+  user-select: none;
+  cursor: move;
+  flex: 1 1 100%;
+}
+
+.all-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 5px;
+  gap: 10px;
+}
+.bind-container {
+    flex: 1 1 100%;
+    border: solid 1px #ccc;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 10px;
+    gap: 10px;
+}
+.binds-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  border-bottom: solid 1px #ccc;
+  text-align: left;
+  padding-left: 0.5em;
+}
+.bind-sel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  height: 2em;
+  text-align: center;
+  border: solid 1px #ccc;
+  border-radius: 4px;
+  background-color:aliceblue;
+}
+.bind-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  border: solid 1px #ccc;
+  border-radius: 4px;
+  min-height: 50px;
+  padding: 0.5em;
+}
+.desc-label {
+  padding-left: 0.5em;
+  color: blue;
+}
+.desc-value {
+  padding-left: 0.4em;
+}
+.edit-binds {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+}
+.edit-binds-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  flex: 1 1 auto;
+  padding-right: 1em;
+}
+.binds-name {
+  text-align: end;
+  user-select: none;
+}
+.edit-binds-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+.send-binds-conteiner {
+    background: #e6e6e6;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 10px;
+    margin-top: 5px;
+}
+

@@ -1,0 +1,261 @@
+.all-app {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 100%;
+}
+
+#toolbar-frame {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    //align-self: stretch;
+    border: 1px solid lightgray;
+    gap: 10px;
+    //margin: 5px;
+    background-color: white;
+    padding: 5px;
+    z-index: 100;
+}
+
+#scroll-buttons-frame {
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-end;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    gap: 10px;
+    padding: 5px;
+    flex: 1 1 100%;
+}
+
+#scroll-label {
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-start;
+    align-items: center;
+    text-align: right;
+    flex: 1 1 100%;
+}
+
+#edit-scrolls-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+    padding: 0 5px;
+}
+
+#floor-plan {
+    flex: 1 1 auto;
+    //height: 100%;
+    border: 2px solid rgb(3, 111, 253);
+    border-radius: 6px;
+    margin: 0px;
+    position: relative;
+    overflow: auto;
+}
+
+#containerID {
+    position: relative;
+    border: solid 2px red;
+}
+
+.attr {
+    position: absolute; // very important
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 5px;
+}
+
+.attr-val {
+    text-align: right;
+    white-space: nowrap;
+    cursor: move;
+    user-select: none;
+}
+.attr-val:hover {
+    color: black;
+    background-color: red;
+}
+
+.attr-edit {
+    color: black;
+    background-color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: solid 1px black;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.attr-edit:hover {
+    color: black;
+    background-color: yellow;
+}
+
+.centered {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.left-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.right-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#show-logs-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border: 1px solid lightgray;
+    padding: 0 5px;
+}
+
+#edit-binds-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border: 1px solid lightgray;
+    padding: 0 5px;
+}
+
+#edit-thermostats-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border: 1px solid lightgray;
+    padding: 0 5px;
+}
+
+.edit-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border: 1px solid lightgray;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    border: 1px solid lightgray;
+    gap: 10px;
+    background-color: white;
+    padding: 5px;
+    z-index: 100;
+    min-height: 15px;
+}
+
+#btm-bar {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background-color:white;
+  min-height: 50px;
+  border: 1px solid lightgray;
+  padding: 10px;
+}
+
+.spinner {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#main-container{
+    box-sizing: border-box;
+    border: 2px solid green;
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-items: stretch;
+    overflow: hidden;
+}
+#side-bar{
+    box-sizing: border-box;
+    //flex: 1 1 auto;
+    height: 100%;
+    border: 2px solid orange;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-items: stretch;
+    overflow: auto;
+    padding: 5px;
+    gap: 15px;
+}
+#test{
+    flex: 1 1 auto;
+    height: 100%;
+    display: flex;
+}
+
+#app-title{
+    flex: 1 1 100%;
+    text-align: left;
+}
+
+
+#scrollSel{
+    flex: 1 1 auto;
+    border: 1px solid lightblue;
+    border-radius: 6px;
+}
+
+.mat-icon {
+    font-size: 32px;
+    height: 32px;
+    width: 32px;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    color: yellow;
+    font-size: 40px;
+}
+
+.overlay{
+    height:100vh;
+    width:100%;
+    background-color:rgba(0, 0, 0, 0.286);
+    z-index:    10;
+    top:        0;
+    left:       0;
+    position:   fixed;
+}
+
+

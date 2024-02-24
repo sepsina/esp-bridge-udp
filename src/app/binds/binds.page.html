@@ -1,0 +1,82 @@
+<div id="dlg-head"
+     cdkDrag
+     cdkDragRootElement=".cdk-overlay-pane"
+     cdkDragBoundary=".cdk-overlay-container">
+    <div id="binds-title" cdkDragHandle>
+        binds
+    </div>
+    <button mat-icon-button (click)="close()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+
+<div class="all-container">
+    <div class="bind-container">
+        <div class="binds-header">
+            Source
+        </div>
+        <mat-select class="bind-sel"
+                    [(value)]="bindSrc"
+                    (selectionChange)="bindSrcSelected($event)">
+            <mat-option *ngFor="let bind of allBindSrc"
+                        [value]="bind">
+                {{bind.name}}
+            </mat-option>
+        </mat-select>
+        <div class="bind-desc">
+            <div *ngFor="let desc of bindSrcDesc">
+                <span class="desc-label">{{desc.key}}</span><span class="desc-value">{{desc.value}}</span>
+            </div>
+        </div>
+        <div class="edit-binds">
+            <div class="edit-binds-name">
+                <mat-form-field>
+                    <mat-label>Edit Name</mat-label>
+                    <input class="binds-name"
+                            type="text"
+                            matInput [formControl]="nameFormCtrl">
+                    <mat-hint align="end">set name for bind source</mat-hint>
+                    <mat-error *ngIf="nameFormCtrl.hasError('required')">
+                        Enter valid location
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="edit-binds-button">
+                <button mat-stroked-button
+                        (click)="wrBindName()">
+                    Write
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="bind-container">
+        <div class="binds-header">
+            Destination
+        </div>
+        <mat-select class="bind-sel"
+                    [(value)]="selBindDst"
+                    (selectionChange)="bindDstSelected($event)">
+            <mat-option *ngFor="let bindDst of freeBindDst"
+                        [value]="bindDst">
+                {{bindDst.name}}
+            </mat-option>
+        </mat-select>
+        <div class="bind-desc">
+            <div *ngFor="let desc of bindDstDesc">
+                <span class="desc-label">{{desc.key}}</span><span class="desc-value">{{desc.value}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="send-binds-conteiner">
+    <button id="send_binds"
+            mat-stroked-button
+            (click)="wrSrcBinds()" [disabled]="!srcValid">
+        Send
+    </button>
+    <button mat-stroked-button
+            (click)="close()">
+        Cancel
+    </button>
+</div>
+

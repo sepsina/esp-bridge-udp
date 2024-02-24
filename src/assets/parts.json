@@ -1,0 +1,140 @@
+[
+  {
+    "partNum": 1,
+    "devName": "ZB-BRIDGE",
+    "part": "base",
+    "url": "www.serf.zb_bridge"
+  },
+  {
+    "partNum": 500,
+    "devName": "HTU21D-005",
+    "part": "base",
+    "url": "www.serf.htu21d_005"
+  },
+  {
+    "partNum": 501,
+    "devName": "HTU21D-005",
+    "part": "temperature",
+    "url": "www.serf.htu21d_005"
+  },
+  {
+    "partNum": 502,
+    "devName": "HTU21D-005",
+    "part": "humidity",
+    "url": "www.serf.htu21d_005"
+  },
+  {
+    "partNum": 503,
+    "devName": "HTU21D-005",
+    "part": "battery",
+    "url": "www.serf.htu21d_005"
+  },
+  {
+    "partNum": 700,
+    "devName": "BME280-007",
+    "part": "base",
+    "url": "www.serf.bme280_007"
+  },
+  {
+    "partNum": 701,
+    "devName": "BME280-007",
+    "part": "temperature",
+    "url": "www.serf.bme280_007"
+  },
+  {
+    "partNum": 702,
+    "devName": "BME280-007",
+    "part": "humidity",
+    "url": "www.serf.bme280_007"
+  },
+  {
+    "partNum": 703,
+    "devName": "BME280-007",
+    "part": "atm pressure",
+    "url": "www.serf.bme280_007"
+  },
+  {
+    "partNum": 704,
+    "devName": "BME280-007",
+    "part": "battery",
+    "url": "www.serf.bme280_007"
+  },
+  {
+    "partNum": 800,
+    "devName": "DBL-SW-008",
+    "part": "base",
+    "url": "www.serf.dbl_sw_008"
+  },
+  {
+    "partNum": 801,
+    "devName": "DBL-SW-008",
+    "part": "push button 1",
+    "url": "www.serf.dbl_SW_008"
+  },
+  {
+    "partNum": 802,
+    "devName": "DBL-SW-008",
+    "part": "push button 2",
+    "url": "www.serf.dbl_sw_008"
+  },
+  {
+    "partNum": 803,
+    "devName": "DBL-SW-008",
+    "part": "battery",
+    "url": "www.serf.dbl_sw_008"
+  },
+  {
+    "partNum": 200,
+    "devName": "DBL-RL-002",
+    "part": "base",
+    "url": "www.serf.dbl_rl_002"
+  },
+  {
+    "partNum": 201,
+    "devName": "DBL-RL-002",
+    "part": "relay 1",
+    "url": "www.serf.dbl_rl_002"
+  },
+  {
+    "partNum": 202,
+    "devName": "DBL-RL-002",
+    "part": "relay 2",
+    "url": "www.serf.dbl_rl_002"
+  },
+  {
+    "partNum": 600,
+    "devName": "RL-006",
+    "part": "base",
+    "url": "www.serf.rl_006"
+  },
+  {
+    "partNum": 601,
+    "devName": "RL-006",
+    "part": "relay",
+    "url": "www.serf.rl_006"
+  },
+  {
+    "partNum": 900,
+    "devName": "SSR-009",
+    "part": "base",
+    "url": "www.serf.ssr_006"
+  },
+  {
+    "partNum": 901,
+    "devName": "SSR-009",
+    "part": "relay",
+    "url": "www.serf.ssr_009"
+  },
+  {
+    "partNum": 1000,
+    "devName": "ACTUATOR-010",
+    "part": "base",
+    "url": "www.serf.actuator_010"
+  },
+  {
+    "partNum": 1001,
+    "devName": "ACTUATOR-010",
+    "part": "on_off",
+    "url": "www.serf.actuator_010"
+  }
+]

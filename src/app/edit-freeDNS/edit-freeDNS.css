@@ -1,0 +1,108 @@
+
+#dlg-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: stretch;
+    /*border: 1px solid lightgrey;*/
+    background: #e6e6e6;
+    /*border-radius: 5px;*/
+    padding: 3px;
+    gap:5px;
+}
+#dns-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /*border: 1px solid lightgrey;*/
+    padding-left: 3px;
+    user-select: none;
+    cursor: move;
+    flex: 1 1 100%;
+}
+
+#drag-handle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: move;
+}
+
+#dlg-frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 10px;
+    margin: 10px;
+    overflow-y: scroll;
+    max-height: 400px;
+}
+.cards-common{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 10px;
+    border: solid 1px grey;
+    border-radius: 5px;
+    gap: 10px;
+}
+
+#test-button {
+    flex: 1 1 100%;
+    align-self: flex-end;
+}
+
+#http-rsp {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    font-size: 12px;
+    padding: 10px;
+    border: solid 1px gray;
+    border-radius: 5px;
+    /*gap: 10px;*/
+    min-height: 50px;
+}
+
+.rsp-msg {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /*flex: 1 1 100%;*/
+}
+.rsp-lbl {
+    color: red;
+    white-space: pre;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-self: flex-start;
+}
+.rsp-val {
+    word-wrap: break-word;
+    overflow: scroll;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex: 1 1 auto;
+}
+
+.edit-dns {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 0 100%;
+    padding: 10px;
+    background: #e6e6e6;
+}

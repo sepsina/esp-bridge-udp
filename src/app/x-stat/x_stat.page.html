@@ -1,0 +1,123 @@
+<div id="dlg-head"
+     cdkDrag
+     cdkDragRootElement=".cdk-overlay-pane"
+     cdkDragBoundary=".cdk-overlay-container">
+    <div id="binds-title" cdkDragHandle>
+        binds
+    </div>
+    <button mat-icon-button (click)="close()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+
+<div class="all-container">
+    <div class="thermostats-container">
+        <div class="thermostats-header">
+            Thermostats
+        </div>
+        <mat-select class="thermostat-sel"
+                    [(value)]="selThermostat"
+                    (selectionChange)="thermostatSelected($event)">
+            <mat-option *ngFor="let thermostat of thermostats"
+                        [value]="thermostat">
+                {{thermostat.name}}
+            </mat-option>
+        </mat-select>
+        <div class="thermostat-desc">
+            <div *ngFor="let desc of thermostatDesc">
+                <span class="desc-label">{{desc.key}}</span><span class="desc-value">{{desc.value}}</span>
+            </div>
+        </div>
+
+        <div class="edit-binds">
+            <div class="edit-binds-name">
+                <mat-form-field>
+                    <mat-label>Set Point</mat-label>
+                    <input class="binds-name"
+                           type="number"
+                           placeholder="set-point"
+                           matInput
+                           [formControl]="setPointFormCtrl"
+                           (change)="spChange($event)">
+                    <mat-hint align="end">thermostat set point</mat-hint>
+                    <mat-error *ngIf="setPointFormCtrl.invalid">{{setPointErr()}}</mat-error>
+                </mat-form-field>
+            </div>
+            <!-- <div class="edit-binds-button">
+                <button mat-stroked-button
+                        (click)="wrBindName()">
+                    Write
+                </button>
+            </div> -->
+        </div>
+
+        <div id="on-off-used-wrap" #usedWrapRef>
+            <div class="on-off-list"
+                 cdkDropList
+                 #usedList="cdkDropList"
+                 [cdkDropListConnectedTo]="[freeList]"
+                 [cdkDropListData]="on_off_used"
+                 (cdkDropListDropped)="usedDrop($event)">
+                <div *ngFor="let on_off of on_off_used"
+                     class="on-off-box"
+                     #onOffBoxRef
+                     cdkDrag
+                     [cdkDragDisabled]='!on_off.valid'
+                     matTooltip
+                     [matTooltipDisabled]="!on_off.valid"
+                     matTooltipPosition="after"
+                     #usedTooltip="matTooltip"
+                     (mouseenter)="showTooltip(usedTooltip, on_off)"
+                     (mouseleave)="usedTooltip.hide()"
+                     (mousedown)="usedTooltip.hide()">
+                    {{on_off.name}}
+                </div>
+
+            </div>
+        </div>
+
+        <!-- <div class="send-binds-conteiner">
+            <button id="send_binds"
+                    mat-stroked-button
+                    (click)="wrSrcBinds()">
+                Send
+            </button>
+        </div> -->
+    </div>
+
+    <div class="actuators-container">
+        <div class="actuators-header">
+            Actuators
+        </div>
+        <div class="on-off-all-wrap">
+            <div class="on-off-list"
+                cdkDropList
+                #freeList="cdkDropList"
+                [cdkDropListConnectedTo]="[usedList]"
+                [cdkDropListData]="on_off_all"
+                (cdkDropListDropped)="freeDrop($event)">
+                <div *ngFor="let on_off of on_off_all"
+                    class="on-off-box"
+                    cdkDrag
+                    [cdkDragDisabled]='!on_off.valid'
+                    matTooltip
+                    [matTooltipDisabled]="!on_off.valid"
+                    matTooltipPosition="before"
+                    #freeTooltip="matTooltip"
+                    (mouseenter)="showTooltip(freeTooltip, on_off)"
+                    (mouseleave)="freeTooltip.hide()"
+                    (mousedown)="freeTooltip.hide()">
+                    {{on_off.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dlg-footer">
+    <button mat-stroked-button
+            (click)="close()">
+        Close
+    </button>
+</div>
+

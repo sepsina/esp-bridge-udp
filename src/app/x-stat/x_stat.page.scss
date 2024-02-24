@@ -1,0 +1,220 @@
+#dlg-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: stretch;
+  background: #e6e6e6;
+  padding: 3px;
+  gap:5px;
+}
+#binds-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 3px;
+  user-select: none;
+  cursor: move;
+  flex: 1 1 100%;
+}
+
+.all-container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 5px;
+}
+.thermostats-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex: 1 1 50%;
+  padding: 5px;
+  gap: 10px;
+}
+.thermostats-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  border-bottom: solid 1px #ccc;
+  text-align: left;
+  padding-left: 0.5em;
+}
+.thermostat-sel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  height: 2em;
+  text-align: center;
+  border: solid 1px #ccc;
+  border-radius: 4px;
+  background-color:aliceblue;
+}
+.thermostat-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  border: solid 1px #ccc;
+  border-radius: 4px;
+  height: fit-content;
+  padding: 0.5em;
+}
+.desc-label {
+  padding-left: 0.5em;
+  color: blue;
+}
+.desc-value {
+  padding-left: 0.4em;
+}
+.edit-binds {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+}
+.edit-binds-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  flex: 1 1 auto;
+  padding-right: 1em;
+}
+.binds-name {
+  text-align: end;
+  user-select: none;
+}
+.edit-binds-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+#on-off-used-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    min-height: 100px;
+}
+
+.sel-dst-bind-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex: 1;
+  border: solid 1px #ccc;
+  border-radius: 4px;
+  margin-top: 0.5em;
+  overflow: auto;
+  height: fit-content;
+  min-height: 6em;
+  padding: 0.5em;
+}
+.send-binds-conteiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  flex: 1 1 auto;
+}
+
+.actuators-container {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 5px;
+  gap: 10px;
+}
+.actuators-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  border-bottom: solid 1px #ccc;
+  text-align: left;
+  padding-left: 0.5em;
+}
+
+.on-off-all-wrap {
+    flex: 1 1 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.on-off-list {
+    flex: 1 1 0; // prevent child to stretch parent
+    border: solid 1px #ccc;
+    min-height: 60px;
+    background: white;
+    border-radius: 4px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.on-off-box {
+    padding: 10px 10px;
+    border-bottom: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    background: khaki;
+    font-size: 14px;
+    user-select: none;
+}
+.on-off-box:hover {
+    background: rgb(217, 255, 1);
+}
+.on-off-box.cdk-drag-disabled {
+    background: white;
+    color: darkgray;
+    cursor: default;
+}
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+/*
+.on-off-box:last-child {
+    //border: none;
+}
+*/
+.on-off-list.cdk-drop-list-dragging .on-off-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+#dlg-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: stretch;
+    background: #e6e6e6;
+    padding: 8px;
+    gap:5px;
+  }

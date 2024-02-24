@@ -1,0 +1,163 @@
+<div id="dlg-head"
+     cdkDrag
+     cdkDragRootElement=".cdk-overlay-pane"
+     cdkDragBoundary=".cdk-overlay-container">
+    <div id="edit-title" cdkDragHandle>
+        edit
+    </div>
+</div>
+
+<div id="testCont">
+    <div #testView id="testView">
+        {{selAttr.formatedVal}}
+    </div>
+</div>
+<div id="dlg-cont">
+    <div class="cards-common" id="name-card">
+        <mat-form-field class="form-field">
+            <input matInput
+                   type="text"
+                   placeholder="attr name"
+                   [formControl]="nameFormCtrl">
+            <mat-hint align="end">attribute name</mat-hint>
+            <mat-error *ngIf="nameFormCtrl.invalid">{{nameErr()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="cards-common" id="offset-card" *ngIf="selAttr.isSensor">
+        <mat-form-field id="units-sel" *ngIf="hasUnits">
+            <mat-label>units</mat-label>
+            <mat-select [formControl]="unitsCtrl"
+                        (selectionChange)="unitsChanged($event)">
+                <mat-option *ngFor="let unit of unitSel" [value]="unit">
+                    {{unit.name}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="unitsCtrl.hasError('required')">choose units</mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <input matInput
+                   type="number"
+                   placeholder="offset"
+                   [formControl]="offsetFormCtrl">
+            <mat-hint align="end">value correction</mat-hint>
+            <mat-error *ngIf="offsetFormCtrl.invalid">{{offsetErr()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="cards-common" id="styles-card">
+        <mat-form-field>
+            <input matInput
+                   type="text"
+                   placeholder="color"
+                   [formControl]="colorFormCtrl">
+            <mat-hint align="end">text color</mat-hint>
+            <mat-error *ngIf="colorFormCtrl.invalid">{{colorErr()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput
+                   type="text"
+                   placeholder="background-color"
+                   [formControl]="bgColorFormCtrl">
+            <mat-hint align="end">background color</mat-hint>
+            <mat-error *ngIf="bgColorFormCtrl.invalid">{{bgColorErr()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput
+                   type="number"
+                   [min]="minFontSize"
+                   [max]="maxFontSize"
+                   placeholder="font size"
+                   [formControl]="fontSizeFormCtrl">
+            <mat-hint align="end">text size, max {{maxFontSize}}px</mat-hint>
+            <mat-error *ngIf="fontSizeFormCtrl.invalid">{{fontSizeErr()}}</mat-error>
+        </mat-form-field>
+        <div class="cards-common" id="borders-card">
+            <mat-form-field>
+                <input matInput
+                       type="text"
+                       placeholder="border-color"
+                       [formControl]="borderColorFormCtrl">
+                <mat-hint align="end">frame color</mat-hint>
+                <mat-error *ngIf="borderColorFormCtrl.invalid">{{borderColorErr()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput
+                       type="number"
+                       min=0
+                       [max]="maxBorderWidth"
+                       placeholder="border-width"
+                       [formControl]="borderWidthFormCtrl">
+                <mat-hint align="end">frame line width, max {{maxBorderWidth}}px</mat-hint>
+                <mat-error *ngIf="borderWidthFormCtrl.invalid">{{borderWidthErr()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput
+                       type="text"
+                       placeholder="border-style"
+                       [formControl]="borderStyleFormCtrl">
+                <mat-hint align="end">frame line style</mat-hint>
+                <mat-error *ngIf="borderStyleFormCtrl.invalid">{{borderStyleErr()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput
+                       type="number"
+                       min=0
+                       [max]="maxBorderRadius"
+                       placeholder="border-radius"
+                       [formControl]="borderRadiusFormCtrl">
+                <mat-hint align="end">rounded corners radius, max {{maxBorderRadius}}px</mat-hint>
+                <mat-error *ngIf="borderRadiusFormCtrl.invalid">{{borderRadiusErr()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="cards-common" id="paddings-card">
+            <mat-form-field>
+                <input matInput
+                       type="number"
+                       min=0
+                       [max]="maxPaddingTop"
+                       placeholder="padding-top"
+                       [formControl]="paddingTopFormCtrl">
+                <mat-hint align="end">top padding, max {{maxPaddingTop}}px</mat-hint>
+                <mat-error *ngIf="paddingTopFormCtrl.invalid">{{paddingTopErr()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput
+                       type="number"
+                       min=0
+                       [max]="maxPaddingRight"
+                       placeholder="padding-right"
+                       [formControl]="paddingRightFormCtrl">
+                <mat-hint align="end">right padding, max {{maxPaddingRight}}px</mat-hint>
+                <mat-error *ngIf="paddingRightFormCtrl.invalid">{{paddingRightErr()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput
+                       type="number"
+                       min=0
+                       [max]="maxPaddingBottom"
+                       placeholder="padding-bottom"
+                       [formControl]="paddingBottomFormCtrl">
+                <mat-hint align="end">bottom padding, max {{maxPaddingBottom}}px</mat-hint>
+                <mat-error *ngIf="paddingBottomFormCtrl.invalid">{{paddingBottomErr()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput
+                       type="number"
+                       min=0
+                       [max]="maxPaddingLeft"
+                       placeholder="padding-left"
+                       [formControl]="paddingLeftFormCtrl">
+                <mat-hint align="end">left padding, max {{maxPaddingLeft}}px</mat-hint>
+                <mat-error *ngIf="paddingLeftFormCtrl.invalid">{{paddingLeftErr()}}</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+</div>
+<div class="set-actions">
+    <div>
+        <button mat-stroked-button (click)="close()">Close</button>
+    </div>
+    <div>
+        <button mat-stroked-button (click)="save()" [disabled]="!isValid()">Save</button>
+    </div>
+</div>
+

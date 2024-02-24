@@ -1,0 +1,29 @@
+<div id="dlg-head"
+     cdkDrag
+     cdkDragRootElement=".cdk-overlay-pane"
+     cdkDragBoundary=".cdk-overlay-container">
+    <div id="log-title" cdkDragHandle>
+        Logs
+    </div>
+    <button mat-icon-button (click)="close()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+
+<div id="dlg-frame">
+    <div id="logs" class="app-card">
+        <div class="right-center app-card-toolbar">
+            <mat-checkbox id="cbScroll"
+                          [ngModel]="scrollFlag"
+                          (ngModelChange)="autoScrollChange($event)"
+                          color="primary">
+                autoscroll
+            </mat-checkbox>
+        </div>
+        <div id="logList">
+            <div *ngFor="let msg of utils.msgLogs" class="log-msg left-center" [style.color]="msg.color">
+                {{ msg.text }}
+            </div>
+        </div>
+    </div>
+</div>

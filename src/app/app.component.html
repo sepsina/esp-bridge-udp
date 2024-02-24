@@ -1,0 +1,95 @@
+<div class="all-app">
+    <div id="toolbar-frame">
+        <!-- <div id="scroll-buttons-frame"> -->
+            <!-- <div id="scroll-label">scrolls</div>
+            <div *ngFor="let scroll of scrolls; let i = index" >
+                <button mat-stroked-button (click)="onScroll(i)">
+                    {{scroll.name}}
+                </button>
+            </div> -->
+            <div id="app-title">
+                bridge
+            </div>
+            <div id="scrollSel">
+                <mat-select (selectionChange)="scrollSelChange($event)"
+                            [(value)]="selScroll">
+                    <mat-option *ngFor="let scroll of scrolls" [value]="scroll">
+                        {{scroll.name}}
+                    </mat-option>
+                </mat-select>
+            </div>
+        <!-- </div> -->
+
+    </div>
+    <div id="main-container">
+        <div id="side-bar">
+            <button id="edit-scrolls-button"
+                    mat-button
+                    (click)="onEditScrollsClick()">
+                <mat-icon fontSet="material-icons-round">swap_vert</mat-icon>
+            </button>
+            <button id="edit-binds-button"
+                    mat-button
+                    (click)="editBinds()">
+                <mat-icon fontSet="material-icons-round">link</mat-icon>
+            </button>
+            <!-- <button id="edit-dns-button"
+                    mat-button
+                    (click)="setDNS()">
+                <mat-icon fontSet="material-icons-round">dns</mat-icon>
+            </button> -->
+            <button id="edit-thermostats-button"
+                    mat-button
+                    (click)="editThermostats()">
+                <mat-icon fontSet="material-icons-round">thermostat</mat-icon>
+            </button>
+            <button id="show-logs-button"
+                    mat-button
+                    (click)="showLogs()">
+                <mat-icon fontSet="material-icons-round">notes</mat-icon>
+            </button>
+        </div>
+        <div id="test">
+            <div id="floor-plan" #floorPlanRef resizeObserver (resize)="onResize($event)">
+                <div #containerRef id="containerID">
+                    <div *ngFor="let attr of storage.attrMap | keyvalue;"
+                        class="attr"
+                        cdkDrag
+                        [cdkDragBoundary]="containerRef"
+                        (cdkDragEnded)="attr.value.drag=false; onDragEnded($event, attr)"
+                        (cdkDragStarted)="attr.value.drag=true; onDragStarted($event)"
+                        [cdkDragFreeDragPosition]="getAttrPosition(attr)"
+                        (mouseenter)="attr.value.isSel=true"
+                        (mouseleave)="attr.value.isSel=false"
+                        (mousedown)="attr.value.isSel=false">
+                        <div cdkDragHandle
+                            class="attr-val centered"
+                            highlightSel
+                            [ngStyle]="getAttrStyle(attr)"
+                            matTooltip
+                            [matTooltipDisabled]="dragFlag"
+                            #attrToolTip='matTooltip'
+                            (mouseenter)="showTooltip(attrToolTip, attr.value)"
+                            (mouseleave)="attrToolTip.hide()"
+                            (mousedown)="attrToolTip.hide()">
+                            {{attr.value.formatedVal}}
+                        </div>
+                        <div *ngIf="attr.value.isSel && !dragFlag"
+                            class="attr-edit centered"
+                            (mousedown)="setStyles(attr)">
+                            <mat-icon>settings</mat-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+    <div class="overlay" *ngIf="progressFlag">
+        <div class="center">
+            {{waitMsg}}
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,68 @@
+<div id="dlg-head"
+     cdkDrag
+     cdkDragRootElement=".cdk-overlay-pane"
+     cdkDragBoundary=".cdk-overlay-container">
+    <div id="dns-title" cdkDragHandle>
+        free DNS
+    </div>
+</div>
+
+<div id="dlg-frame">
+    <div class="cards-common" id="edit-card">
+        <mat-form-field>
+            <input matInput
+                   type="text"
+                   autocomplete="off"
+                   placeholder="user"
+                   [formControl]="userFormCtrl">
+            <mat-error *ngIf="userFormCtrl.hasError('required')">{{userErr()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput
+                   type="text"
+                   autocomplete="off"
+                   placeholder="password"
+                   [formControl]="pswFormCtrl">
+            <mat-error *ngIf="pswFormCtrl.hasError('required')">{{pswErr()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput
+                   type="text"
+                   autocomplete="off"
+                   placeholder="domain"
+                   [formControl]="domainFormCtrl">
+            <mat-error *ngIf="domainFormCtrl.hasError('required')">{{domainErr()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="cards-common" id="test-card">
+        <div id="test-button">
+            <button mat-stroked-button (click)="test()">Test</button>
+        </div>
+        <div id="http-rsp">
+            <div class='rsp-msg' *ngFor="let msg of logs">
+                <div class="rsp-lbl">
+                    {{msg.key}}
+                </div>
+                <div class="rsp-val">
+                    {{msg.value}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="edit-dns">
+    <div>
+        <button mat-stroked-button
+                (click)="close()">
+            Cancel
+        </button>
+    </div>
+    <div>
+        <button mat-stroked-button
+                (click)="save()">
+            Save
+        </button>
+    </div>
+</div>
